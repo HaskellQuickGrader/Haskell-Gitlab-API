@@ -38,7 +38,7 @@ library
                        TypeOperators,
                        DeriveGeneric,
                        DuplicateRecordFields
-  build-depends:       base >=4.10 && <4.11,
+  build-depends:       base >=4.10 && <=4.11.1.0,
                        bytestring >=0.10 && <0.11,
                        parsec,
                        email-validate,

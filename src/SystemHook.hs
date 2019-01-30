@@ -34,11 +34,11 @@ sysHookDecoder b = (U.decodeRsp b) <++> (P.pushDecodeRsp b)
                                    <++> (PC.decodeRsp b)
 
 
-getPushDecoded :: ByteString -> Either String (Either ErrorResp P.SResp)
-getPushDecoded b = case (sysHookDecoder b) of
-                     (Left m) -> Left m
-                     (Right (Left m)) -> Right (Left m)
-                     (Right (Right d)) -> case d of
-                                            (injr (injl d')) -> Right (Right d')
-                                            _ -> Left $ "Wrong System Hook Decoded"
+-- getPushDecoded :: ByteString -> Either String (Either ErrorResp P.SResp)
+-- getPushDecoded b = case (sysHookDecoder b) of
+--                      (Left m) -> Left m
+--                      (Right (Left m)) -> Right (Left m)
+--                      (Right (Right d)) -> case d of
+--                                             (injr (injl d')) -> Right (Right d')
+--                                             _ -> Left $ "Wrong System Hook Decoded"
                                             
